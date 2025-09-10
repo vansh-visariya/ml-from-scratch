@@ -19,3 +19,13 @@ def r2_score(y_true, y_pred):
 ## When you want an error metric in the same scale as the target variable
 def rmse(y_true, y_pred):
     return np.sqrt(np.mean((y_true - y_pred)**2))
+
+def cross_entropy_loss(y_true, y_pred):
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+
+    y_pred = np.clip(y_pred, 1e-10, 1 - 1e-10)
+    y_true = np.clip(y_true, 1e-10, 1 - 1e-10)
+    
+    total = y_true*np.log(y_pred) + (1-y_true)*np.log(1-y_pred)
+    return -np.mean(total)

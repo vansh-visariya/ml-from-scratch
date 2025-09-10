@@ -1,0 +1,40 @@
+# logistic regression is quite similar to linear regression,
+# its just it gives us the probability of the output being 1 or 0 usinf sigmoid function
+
+import numpy as np
+
+def sigmoid(x):
+    # brings the prediction to the range of 0 to 1 for classification
+    return 1 / (1 + np.exp(-x))
+
+class LogisticRegression:
+    def __init__(self, learning_rate=0.001, n_iters=1000):
+        self.lr = learning_rate
+        self.n_iters = n_iters
+        self.weights = None
+        self.bias = None
+
+    def fit(self, X, y):
+        n_samples, n_features = X.shape ## (rows, columns)
+        self.weights = np.zeros(n_features)
+        self.bias = 0
+        
+        for _ in range(self.n_iters):
+            y_pred = np.dot(X, self.weights) + self.bias
+            y_pred = sigmoid(y_pred)
+
+            ## gradient give us the direction of the steepest ascent
+            dw = (1/n_samples) * np.dot(X.T, (y_pred - y))  ## there we removed 2 from the dw and db, bcs it just a constant
+            ## X.T = (n_features, n_samples), (y_pred - y) = (n_samples, 1)
+            ## dw = (n_features, 1)
+            ## in dot product, inner dimensions must match
+            db = (1/n_samples) * np.sum(y_pred - y)
+
+            self.weights -= self.lr * dw  ## we go opposite direction of the gradient
+            self.bias -= self.lr * db
+
+    def predict(self, X):
+        y_pred = np.dot(X, self.weights) + self.bias
+        y_pred = sigmoid(y_pred)
+        class_pred = [1 if y > 0.5 else 0 for y in y_pred]
+        return class_pred
