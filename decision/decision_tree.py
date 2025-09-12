@@ -48,6 +48,12 @@ class DecisionTree:
 
         # create child nodes
         left_idxs, right_idxs = self._split(X[:,best_feature], best_threshold)
+
+        # checks if the split is pure
+        if len(left_idxs)==0 or len(right_idxs)==0:
+            leaf_value = self._most_common_label(y)
+            return Node(value=leaf_value)
+        
         left = self._grow_tree(X[left_idxs, :], y[left_idxs], depth+1)
         right = self._grow_tree(X[right_idxs, :], y[right_idxs], depth+1)
         return Node(left, right, best_feature, best_threshold)
