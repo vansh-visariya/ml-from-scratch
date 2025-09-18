@@ -9,10 +9,6 @@ SUPERVISED LEARNING
     8. K-Nearest Neighbors [done]
     9. Support Vector Machine
     10. Naive Bayes
-    11. K-Means Clustering
-    12. Hierarchical Clustering
-    13. Principal Component Analysis
-    14. Linear Discriminant Analysis
 
 UNSUPERVISED LEARNING
     1. K-Means Clustering
