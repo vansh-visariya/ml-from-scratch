@@ -13,6 +13,6 @@ SUPERVISED LEARNING
 
 UNSUPERVISED LEARNING
     1. K-Means Clustering [done]
-    2. Hierarchical Clustering
+    2. Hierarchical Clustering [done]
     3. Principal Component Analysis [done]
-    4. DBSCAN clustering
+    4. DBSCAN clustering [done]
