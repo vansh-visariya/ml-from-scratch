@@ -8,26 +8,11 @@ SUPERVISED LEARNING
     7. Random Forest [done]
     8. K-Nearest Neighbors [done]
     9. Support Vector Machine
-    10. Naive Bayes
+    10. Naive Bayes [done]
+    11. XGBoost
 
 UNSUPERVISED LEARNING
-    1. K-Means Clustering
+    1. K-Means Clustering [done]
     2. Hierarchical Clustering
-    3. Principal Component Analysis
-    4. Linear Discriminant Analysis
-    5. Apriori Algorithm
-    6. Association Rule Learning
-
-REINFORCEMENT LEARNING
-    1. Q-Learning
-    2. SARSA
-    3. Deep Q-Network
-    4. Policy Gradient
-    5. Actor-Critic
-    6. Monte Carlo Tree Search
-    7. Upper Confidence Bound
-    8. Thompson Sampling
-    9. Bayesian Optimization
-    10. Genetic Algorithm
-    11. Simulated Annealing
-    12. Particle Swarm Optimization
+    3. Principal Component Analysis [done]
+    4. DBSCAN clustering
